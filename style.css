@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #282828;
+    font-family: 'Kanit', sans-serif;
+}
+
+.time{
+    color: aliceblue
+}
+
+/* 定義時鐘位置與外框 */
+.clock{
+    /* 外邊框裝飾 */
+    border: #282828 solid 7px;
+    border-radius: 100%;
+    box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5),
+                4px 4px 10px rgba(0, 0, 0, 0.5) inset,
+                -4px -4px 10px rgba(67, 67, 67, 0.5) inset,
+                4px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 30rem;
+    height: 30rem;
+    margin: auto;
+    position: relative;
+    /* rotate: -90deg; */
+}
+
+/* 時鐘刻度 - 藍線 */
+.clock::before, .clock::after{
+    content: '';
+    background-color: aqua;
+    height: 100%;
+    width: 5px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 2;
+}
+
+.clock::before{
+    transform: translate(-50%, 0);
+}
+
+.clock::after{
+    rotate: 90deg;
+}
+
+/* 時鐘刻度 - 紫線 */
+.line{
+    width: 3px;
+    height: 100%;
+    background-color: #bdbdcb;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.line-1{
+    transform: rotate(30deg);
+}
+
+.line-2{
+    transform: rotate(60deg);
+}
+
+.line-3{
+    transform: rotate(120deg);
+}
+
+.line-4{
+    transform: rotate(150deg);
+}
+
+/* 添加內部時鐘版面 */
+.clock-first-layer{
+    background-color: #282828;
+    width: 95%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.clock-second-layer{
+    background-color: #282828;
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.clock-third-layer{
+    background-color: gray;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+/* 指針樣式 */
+.hand{
+    background-color: #61afff;
+    height: 8px;
+    width: 50%;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0;
+    transform: rotate(-90deg);
+}
+
+.hour-hand{
+    background-color: #3698fa;
+    width: 25%;
+    z-index: 4;
+}
+
+.minute-hand{
+    height: 4px;
+    width: 40%;
+    z-index: 5;
+}
+
+.second-hand{
+    background-color: #ee791a;
+    height: 2px;
+    width: 45%;
+    z-index: 6;
+}
+
+/* 日期顯示區 */
+.date-container{
+    border-radius: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+    width: 10rem;
+    height: 4rem;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    z-index: 3;
+    /* 給子層定位 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+.week{
+    color: white;
+    margin: 0;
+}
