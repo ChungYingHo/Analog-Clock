@@ -1,5 +1,5 @@
 // DOM 操作
-const clock = document.querySelector('.time')
+const digital = document.querySelector('.digital-time')
 const date = document.querySelector('.date')
 const weekDay = document.querySelector('.week')
 const hourHand = document.querySelector('.hour-hand')
@@ -12,23 +12,30 @@ const weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
 // 更新時鐘
 const updateClock = ()=>{
     const times = new Date()
-    const hour = times.getHours()
-    const minute = times.getMinutes()
-    const second = times.getSeconds()
-    const year = times.getFullYear()
-    const month = times.getMonth() + 1
-    const day = times.getDate()
-    const week = times.getDay()
+    let hour = times.getHours()
+    let minute = times.getMinutes()
+    let second = times.getSeconds()
+    let year = times.getFullYear()
+    let month = times.getMonth() + 1
+    let day = times.getDate()
+    let week = times.getDay()
 
-    const currentTime = `${hour}:${minute}:${second}`
-    const currentDate = `${year} / ${month} / ${day}`
-    const currentWeek = weeks[week]
+    second = second < 10 ? '0' + second : second
+    minute = minute < 10 ? '0' + minute : minute
+    hour = hour < 10 ? '0' + hour : hour
+    month = month < 10 ? '0' + month : month
+    day = day < 10 ? '0' + day : day
+
 
     const secondDeg = (second / 60) * 360 - 90
     const minDeg = (minute / 60) * 360 - 90
     const hourDeg = (hour / 12) * 360 - 90
 
-    clock.innerHTML = currentTime
+    const currentTime = `${hour} : ${minute} : ${second}`
+    const currentDate = `${year} / ${month} / ${day}`
+    const currentWeek = weeks[week]
+
+    digital.innerHTML = currentTime
     date.innerHTML = currentDate
     weekDay.innerHTML = currentWeek
 

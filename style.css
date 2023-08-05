@@ -7,10 +7,6 @@ body{
     font-family: 'Kanit', sans-serif;
 }
 
-.time{
-    color: aliceblue
-}
-
 /* 定義時鐘位置與外框 */
 .clock{
     /* 外邊框裝飾 */
@@ -22,7 +18,7 @@ body{
                 4px 4px 10px rgba(0, 0, 0, 0.3);
     width: 30rem;
     height: 30rem;
-    margin: auto;
+    margin: 5rem auto 1rem;
     position: relative;
     /* rotate: -90deg; */
 }
@@ -102,7 +98,7 @@ body{
 .clock-third-layer{
     background-color: gray;
     width: 20px;
-    height: 20px;
+    aspect-ratio: 1;
     border-radius: 100%;
     position: absolute;
     top: 50%;
@@ -143,31 +139,57 @@ body{
     z-index: 6;
 }
 
-/* 日期顯示區 */
-.date-container{
+/* 數位時鐘 */
+.digital-clock, .date-container{
     border-radius: 3rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
-    width: 10rem;
-    height: 4rem;
     position: absolute;
-    top: 75%;
-    left: 50%;
     transform: translate(-50%, -75%);
     z-index: 3;
     /* 給子層定位 */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.digital-clock{
+    width: 12rem;
+    height: 4rem;
+    top: 35%;
+    left: 50%;
+}
+
+.digital-time{
+    color: rgb(170, 214, 252);
+    font-size: 30px;
+}
+
+/* 日期顯示區 */
+.date-container{
+    width: 10rem;
+    height: 4rem;
+    top: 75%;
+    left: 50%;
+    flex-direction: column;
+}
+
 .date{
-    color: white;
+    color: rgb(136, 198, 252);
     font-size: 20px;
     margin: 0;
 }
 
 .week{
-    color: white;
+    color: rgb(62, 159, 245);
     margin: 0;
+}
+
+/* footer */
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.creator{
+    color: white;
 }
