@@ -3,4 +3,4 @@ It is a simple analog clock created by HTML, CSS and JavaScript. The styles are 
 ### Diagram
 ![clock](screenshot.png)
 ### How to view the website?
-You can browse this website at the following URL:
+You can browse this website at the following URL: **https://chungyingho.github.io/Analog-Clock/**
