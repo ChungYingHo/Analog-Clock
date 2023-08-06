@@ -29,7 +29,7 @@ const updateClock = ()=>{
 
     const secondDeg = (second / 60) * 360 - 90
     const minDeg = (minute / 60) * 360 - 90
-    const hourDeg = (hour / 12) * 360 - 90
+    const hourDeg = (hour / 12) * 360 - 90 + (minute / 60) * 30
 
     const currentTime = `${hour} : ${minute} : ${second}`
     const currentDate = `${year} / ${month} / ${day}`
